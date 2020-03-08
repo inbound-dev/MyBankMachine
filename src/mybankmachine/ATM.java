@@ -37,11 +37,11 @@ public class ATM {
         double EndBalanceInterest = StartingBalance * 1 + InterestRate * InterestPeriod - StartingBalance;
         System.out.println("Your Current Interest Rate Is " + EndBalanceInterest + " In One Year");
     }
-    public static void InvestmentInterest(int daysInvested, int InvestmentBalance){
+    public static void InvestmentInterest(int daysInvested, double InvestmentBalance){
         double yearlyInterest = InvestmentBalance *InterestRate - InvestmentBalance;
         double dailyInterest = yearlyInterest / 365;
         double afterInvestment = daysInvested * dailyInterest + InvestmentBalance;
-        
+                
         System.out.println("After " + daysInvested + " days You Will Have $" + afterInvestment);
     }
 }
