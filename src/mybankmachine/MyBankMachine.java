@@ -5,6 +5,7 @@
  */
 package mybankmachine;
 import java.util.Scanner;
+import static mybankmachine.ATM.StartingBalance;
 /**
  *
  * @author Jorda
@@ -67,10 +68,15 @@ public class MyBankMachine {
             if(FirstChoice.equals("Investments") || FirstChoice.equals("investments")){
                 
                 System.out.println("How Much Would you like to invest?");
-                int balanceInvested = Input.nextInt();
+                double balanceInvested = Input.nextDouble();
+                // checking if customer actually contains the amount invested
+                if(balanceInvested > StartingBalance){
+                    System.out.println("Sorry Insufficecnt Funds");
+                    break;
+                }
                 System.out.println("How many Days would you like to Invest this balanace?");
                 int daysInvested = Input.nextInt();
-                ATM.InvestmentInterest(daysInvested, balanceInvested);
+                ATM.InvestmentInterest(daysInvested, balanceInvested); 
                 CustomerPresent = false;
             }
             // if the user enters somthing the bank cannot do
